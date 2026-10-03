@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Brand Integer — One Ecosystem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ===== Unified Portal v1.1 — brandinteger.com theme ===== */
+:root{
+  --gold:#C49A3A; --gold-lt:#D9B45C; --ink:#2A2015; --dark:#140F09; --dark2:#1E170E;
+  --cream:#FCF9F3; --sand:#F4EFE6; --line:#E4DCCB; --muted:#6E6150; --white:#FFFFFF;
+  --serif:"Noto Serif", Georgia, "Times New Roman", serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font:400 17px/1.75 var(--serif);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+em{font-style:italic;color:var(--gold)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+.eyebrow{display:flex;align-items:center;gap:16px;font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin:0 0 18px}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--gold);flex:none}
+h1,h2,h3{font-weight:400;letter-spacing:-.01em;margin:0}
+
+/* Header */
+.top{background:var(--cream);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;padding-top:env(safe-area-inset-top,0px)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;align-items:center;gap:14px;text-decoration:none}
+.logo .mark{width:46px;height:46px;background:var(--dark);color:var(--gold);display:grid;place-items:center;font-size:24px;border-bottom:4px solid var(--gold)}
+.logo .word{font-size:19px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.logo .word i{color:var(--gold);font-weight:500}
+.btn{display:inline-block;text-decoration:none;text-transform:uppercase;letter-spacing:.24em;font-size:13px;font-weight:600;padding:14px 26px;border:1px solid var(--gold);cursor:pointer;font-family:var(--serif)}
+.btn-gold{background:var(--gold);color:var(--dark)}
+.btn-gold:hover{background:var(--gold-lt)}
+.btn-line{background:none;color:var(--ink);border-color:var(--ink);padding:10px 18px;letter-spacing:.18em;font-size:12px}
+
+/* Hero */
+.hero{background:radial-gradient(120% 80% at 85% 10%,#3A2A14 0%,var(--dark2) 45%,var(--dark) 100%);color:#F3ECDF;padding:64px 0 72px}
+.badge{display:inline-flex;gap:10px;align-items:center;border:1px solid var(--gold);color:var(--gold);padding:8px 18px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;margin-bottom:26px}
+.hero h1{font-size:clamp(44px,9vw,82px);line-height:1.08;margin-bottom:26px;max-width:12ch}
+.hero .lede{color:#D8CDBB;max-width:54ch;margin:0 0 36px}
+.switch{display:flex;max-width:560px;border:1px solid rgba(196,154,58,.55)}
+.switch button{flex:1;background:none;border:0;color:#CFC3AE;font-family:var(--serif);text-align:left;padding:16px 18px;cursor:pointer;transition:background .3s,color .3s}
+.switch button + button{border-left:1px solid rgba(196,154,58,.55)}
+.switch button b{display:block;font-size:13px;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
+.switch button small{display:block;font-size:14px;font-style:italic;margin-top:4px;opacity:.85}
+.switch button[aria-selected="true"]{background:var(--gold);color:var(--dark)}
+.hero .cta{margin-top:34px;display:flex;flex-wrap:wrap;gap:22px;align-items:center}
+.hero .cta a.link{color:var(--gold);text-decoration:none;text-transform:uppercase;letter-spacing:.24em;font-size:13px;border-bottom:1px solid var(--gold);padding-bottom:8px}
+
+/* Engines */
+.sec{padding:76px 0}
+.sec h2{font-size:clamp(32px,5.5vw,50px);line-height:1.15;margin-bottom:16px;max-width:20ch}
+.sec .intro{color:var(--muted);max-width:58ch;margin:0 0 40px}
+.engines{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.engine{background:var(--white);padding:30px 26px}
+.engine .num{font-size:15px;color:var(--gold);letter-spacing:.1em}
+.engine h3{font-size:22px;line-height:1.3;margin:14px 0 10px}
+.engine p{margin:0;color:var(--muted);font-size:16px;line-height:1.7}
+
+/* Expanding band */
+.band{background:var(--dark);border-top:3px solid var(--gold);border-bottom:3px solid var(--gold);color:#EDE4D3;padding:40px 0}
+.band .eyebrow{margin-bottom:20px}
+.chips{display:flex;flex-wrap:wrap;gap:12px 28px;margin:0;padding:0;list-style:none}
+.chips li{font-size:13px;letter-spacing:.22em;text-transform:uppercase;display:flex;align-items:center;gap:28px}
+.chips li:not(:last-child)::after{content:"";width:5px;height:5px;border-radius:50%;background:var(--gold)}
+
+/* Flow */
+.flow{background:var(--sand)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0;margin:0;padding:0;list-style:none;counter-reset:s;border-top:1px solid var(--line)}
+.steps li{counter-increment:s;padding:22px 18px 22px 0;border-bottom:1px solid var(--line);font-size:18px}
+.steps li::before{content:"Step " counter(s,decimal-leading-zero);display:block;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+
+/* Spaces */
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.tile{display:block;text-decoration:none;background:var(--white);border:1px solid var(--line);border-top:3px solid var(--gold);padding:28px 24px;transition:border-color .2s,transform .2s}
+.tile:hover{border-color:var(--gold);transform:translateY(-2px)}
+.tile .ic{font-size:28px;line-height:1}
+.tile strong{display:block;font-size:22px;font-weight:400;margin:14px 0 6px}
+.tile span{display:block;color:var(--muted);font-size:15px;line-height:1.6}
+.tile .go{margin-top:16px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.tile.off{opacity:.55;pointer-events:none}
+.tile.off .go{color:var(--muted)}
+
+/* Footer */
+footer{background:var(--dark);color:#BDB09B;padding:56px 0 40px;font-size:14.5px;line-height:1.7}
+footer .fl{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+footer .fl .word{color:#F3ECDF}
+footer p{margin:0 0 10px;max-width:74ch}
+footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;border-top:1px solid #33291B;margin-top:28px;padding-top:20px;font-size:13px}
+footer a{color:var(--gold);text-decoration:none}
+
+.wa{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.25);z-index:20}
+.wa svg{width:30px;height:30px;fill:#fff}
+
+@media (max-width:600px){
+  .logo .word{font-size:16px} .logo .mark{width:40px;height:40px;font-size:21px}
+  .btn-line{padding:9px 12px;letter-spacing:.12em}
+  .sec{padding:60px 0} .switch button{padding:14px 12px} .switch button b{letter-spacing:.16em}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top"><span class="mark">BI</span><span class="word">Brand <i>Integer</i></span></a>
+    <a class="btn btn-line" href="#spaces">Sign in</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <span class="badge">🎓 Founded by IIM alumna</span>
+    <p class="eyebrow">One ecosystem</p>
+    <h1 id="heroTitle"></h1>
+    <p class="lede" id="heroLede"></p>
+    <div class="switch" role="tablist" aria-label="Choose your side">
+      <button role="tab" id="tab-brands" aria-selected="true" aria-controls="engines"><b>For brands</b><small>Discover. Create. Sell. Scale.</small></button>
+      <button role="tab" id="tab-part" aria-selected="false" aria-controls="engines"><b>For participants</b><small>Buy. Create. Sell. Refer. Earn.</small></button>
+    </div>
+    <div class="cta">
+      <a class="btn btn-gold" href="#spaces">Go to your space</a>
+      <a class="link" id="joinLink" href="#">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="engines" role="tabpanel" aria-live="polite">
+  <div class="wrap">
+    <p class="eyebrow" id="engEyebrow"></p>
+    <h2 id="engTitle"></h2>
+    <p class="intro" id="engIntro"></p>
+    <div class="engines" id="engList"></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Expanding next</p>
+    <ul class="chips" id="soon"></ul>
+  </div>
+</section>
+
+<section class="sec flow">
+  <div class="wrap">
+    <p class="eyebrow">How it works</p>
+    <h2 id="flowTitle"></h2>
+    <p class="intro" id="flowIntro"></p>
+    <ol class="steps" id="steps"></ol>
+  </div>
+</section>
+
+<section class="sec" id="spaces">
+  <div class="wrap">
+    <p class="eyebrow">Our portals</p>
+    <h2>Many portals. <em>One ecosystem.</em></h2>
+    <p class="intro">Already working with us? Pick where you want to go.</p>
+    <div class="tiles" id="tiles"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fl"><span class="logo"><span class="mark">BI</span><span class="word">Brand <i>Integer</i></span></span></div>
+    <p>Feedback on Brand Integer campaigns is the buyer's own honest experience. We never ask for or reward a specific rating.</p>
+    <p>Creators and influencers must disclose brand collaborations (#ad, #collab) as per ASCI guidelines. Rewards, cashback and commissions follow each campaign's terms and are not guaranteed income.</p>
+    <div class="row">
+      <span>© <span id="yr"></span> Brand Integer · <a href="https://brandinteger.com">brandinteger.com</a> · <a href="mailto:connect@brandinteger.com">connect@brandinteger.com</a></span>
+      <span>Unified Portal v1.1 · <a href="#" id="adminLink">Team login</a></span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa" id="waBtn" href="#" aria-label="Chat on WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.2.6 4.4 1.7 6.3L3.2 29l7.3-1.9c1.8 1 3.9 1.5 5.9 1.5h.1c7 0 12.7-5.7 12.7-12.6C29.2 8.6 23 3 16 3zm0 23.4c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.3 1.1 1.2-4.2-.3-.4c-1.1-1.7-1.7-3.6-1.7-5.6C5.1 9.8 10 5 16 5s10.9 4.8 10.9 10.6S22 26.4 16 26.4zm6-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.7 5 .8.4 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.3.2-1.5-.1-.2-.3-.3-.7-.4z"/></svg></a>
+
+<script>
+/* ===== Edit links here. Leave "" to show a tile as "Opening soon". ===== */
+const CONFIG = {
+  brandPortal:  "https://brandinteger-alt.github.io/BrandPortal/",
+  memberPortal: "",   // TODO: member/buyer portal URL (move from root, e.g. /Member/, if this hub becomes the root)
+  mediator:     "https://brandinteger-alt.github.io/Mediator/",
+  sellnbuy:     "https://brandinteger-alt.github.io/SellNBuy",
+  lookup:       "https://brandinteger-alt.github.io/Lookup",
+  admin:        "",   // TODO: admin/ops portal (v5.8) URL
+  whatsapp:     "https://wa.me/919930977520"
+};
+
+const SIDES = {
+  brands: {
+    hero: 'Discover, Create &amp; <em>Scale.</em>',
+    lede: "Content, reach, buyers and inventory recovery from one growth partner, instead of six disconnected vendors.",
+    eyebrow: "For brands",
+    title: 'Four engines, <em>live today.</em>',
+    intro: "Everything your brand needs to launch, sell and grow, run by one team and tracked in one portal.",
+    engines: [
+      ["Product seeding & genuine buyer feedback","Real buyers from our community try your product and share their honest experience, building trust on every marketplace."],
+      ["UGC & influencer content","UGC creators make demo reels, unboxings and testimonials. Influencers take them to the right audience. We coordinate both."],
+      ["Product launches","Seeding, content, influencers and offers run as one coordinated launch instead of scattered activities."],
+      ["Inventory recovery","Move clearance, open-box and excess stock through the Brand Integer buy & sell marketplace."]
+    ],
+    soon: ["Wholesale marketplace","Retailer & distributor acquisition","Affiliate campaigns","Cashback & loyalty","Competitions & giveaways","Regional campaigns"],
+    flowTitle: 'One product. <em>Many growth engines.</em>',
+    flowIntro: "A single launch can move through every engine in the ecosystem.",
+    flow: ["New product","Creators make content","Influencers amplify","Buyers share feedback","Offers drive repeat","Wholesale expands reach"]
+  },
+  participants: {
+    hero: 'Buy, Create &amp; <em>Earn.</em>',
+    lede: "Turn your buying, content and influence into opportunities. Take part in as many ways as you like.",
+    eyebrow: "For participants",
+    title: 'Four ways to take part, <em>live today.</em>',
+    intro: "Buyers, creators and sellers each have their own space. Every campaign has its own rewards and rules.",
+    engines: [
+      ["Buy & get rewarded","Try participating products and receive the rewards each campaign offers."],
+      ["Share genuine feedback","Tell other buyers about your real experience. Honest, and always in your own words."],
+      ["Create UGC","Make reels, unboxings and product photos for brands. Your content is the value, not your follower count."],
+      ["Sell on SellNBuy","List products you no longer need and reach buyers directly."]
+    ],
+    soon: ["Affiliate links","Refer & earn","Wholesale for resellers","Influencer collaborations","Competitions","Giveaways"],
+    flowTitle: 'One account. <em>Many ways to participate.</em>',
+    flowIntro: "Start anywhere. Each step opens up the next.",
+    flow: ["Buy","Get rewarded","Create content","Sell & resell","Grow your network"]
+  }
+};
+
+const TILES = [
+  ["🏢","Brand Portal","Campaigns, slots, payments, ratings and ROI in one dashboard.","brandPortal"],
+  ["🧾","My Orders & Refunds","For buyers and members: track every order and refund.","memberPortal"],
+  ["🤝","Mediator Portal","Orders by month, mediator and brand code.","mediator"],
+  ["♻️","SellNBuy","Buy and sell pre-owned and open-box products.","sellnbuy"],
+  ["🔎","Order Lookup","Find any order across monthly sheets.","lookup"]
+];
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function renderSide(key){
+  const d = SIDES[key];
+  $("#tab-brands").setAttribute("aria-selected", key === "brands");
+  $("#tab-part").setAttribute("aria-selected", key === "participants");
+  $("#heroTitle").innerHTML = d.hero;           // trusted static strings
+  $("#heroLede").textContent = d.lede;
+  $("#engEyebrow").textContent = d.eyebrow;
+  $("#engTitle").innerHTML = d.title;
+  $("#engIntro").textContent = d.intro;
+  $("#engList").innerHTML = d.engines.map((e,i) =>
+    `<article class="engine"><div class="num">${String(i+1).padStart(2,"0")}</div><h3>${esc(e[0])}</h3><p>${esc(e[1])}</p></article>`).join("");
+  $("#soon").innerHTML = d.soon.map(s => `<li>${esc(s)}</li>`).join("");
+  $("#flowTitle").innerHTML = d.flowTitle;
+  $("#flowIntro").textContent = d.flowIntro;
+  $("#steps").innerHTML = d.flow.map(f => `<li>${esc(f)}</li>`).join("");
+  try { localStorage.setItem("bi_side", key); } catch(e) {}
+  history.replaceState(null, "", key === "participants" ? "#participants" : "#brands");
+}
+
+function renderTiles(){
+  $("#tiles").innerHTML = TILES.map(([ic, name, sub, k]) => {
+    const url = CONFIG[k];
+    return url
+      ? `<a class="tile" href="${esc(url)}"><div class="ic" aria-hidden="true">${ic}</div><strong>${esc(name)}</strong><span>${esc(sub)}</span><div class="go">Open portal</div></a>`
+      : `<div class="tile off" aria-disabled="true"><div class="ic" aria-hidden="true">${ic}</div><strong>${esc(name)}</strong><span>${esc(sub)}</span><div class="go">Opening soon</div></div>`;
+  }).join("");
+  const a = $("#adminLink");
+  if (CONFIG.admin) a.href = CONFIG.admin; else a.remove();
+  ["#waBtn","#joinLink"].forEach(id => { $(id).href = CONFIG.whatsapp; $(id).target = "_blank"; $(id).rel = "noopener"; });
+}
+
+$("#tab-brands").onclick = () => renderSide("brands");
+$("#tab-part").onclick  = () => renderSide("participants");
+$(".switch").addEventListener("keydown", e => {
+  if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+    const next = $("#tab-brands").getAttribute("aria-selected") === "true" ? "participants" : "brands";
+    renderSide(next); (next === "brands" ? $("#tab-brands") : $("#tab-part")).focus();
+  }
+});
+
+let start = location.hash === "#participants" ? "participants" : location.hash === "#brands" ? "brands" : null;
+if (!start) { try { start = localStorage.getItem("bi_side"); } catch(e) {} }
+renderSide(start === "participants" ? "participants" : "brands");
+renderTiles();
+$("#yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
